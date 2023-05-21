@@ -63,6 +63,8 @@ public class SortingApp extends JFrame {
         algorithmComboBox.addItem("Selection Sort");
         algorithmComboBox.addItem("Insertion Sort");
         algorithmComboBox.addItem("Count Sort");
+        algorithmComboBox.addItem("Merge Sort");
+        algorithmComboBox.addItem("Heap Sort"); // Agregado el algoritmo Heap Sort al menú desplegable
         algorithmComboBox.setBounds(230, 10, 150, 20);
         add(algorithmComboBox);
 
@@ -135,6 +137,8 @@ public class SortingApp extends JFrame {
             case "Selection Sort" -> SelectionSort.sort(array);
             case "Insertion Sort" -> InsertionSort.sort(array);
             case "Count Sort" -> CountSort.sort(array);
+            case "Merge Sort" -> MergeSort.sort(array);
+            case "Heap Sort" -> HeapSort.sort(array); // Agregado el caso para el algoritmo Heap Sort
             default ->
                 // Default to Bubble Sort
                     BubbleSort.sort(array);
@@ -172,6 +176,8 @@ public class SortingApp extends JFrame {
             case "Selection Sort" -> SelectionSort.getSortedArray();
             case "Insertion Sort" -> InsertionSort.getSortedArray();
             case "Count Sort" -> CountSort.getSortedArray();
+            case "Merge Sort" -> MergeSort.getSortedArray();
+            case "Heap Sort" -> HeapSort.getSortedArray(); // Agregado el caso para el algoritmo Heap Sort
             default -> new int[0];
         };
     }
