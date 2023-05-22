@@ -1,6 +1,7 @@
 package org.example;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.Objects;
 
 public class SortingApp extends JFrame {
@@ -23,21 +24,44 @@ public class SortingApp extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(440, 650);
         setLayout(null);
+        Font font = new Font("Arial", Font.BOLD, 12);
+        Font buttonFont = new Font("Montserrat", Font.BOLD, 14);
+
+        Color buttonForeground = Color.WHITE;
+        Color buttonBackground = Color.decode("#6EC5FF");
+
+
 
         button100 = new JButton("Sort 100");
         button100.setBounds(50, 30, 100, 30);
+        button100.setFont(buttonFont);
+        button100.setForeground(buttonForeground);
+        button100.setBackground(buttonBackground);
+        button100.setBorderPainted(false);
         add(button100);
 
         button1000 = new JButton("Sort 1000");
         button1000.setBounds(160, 30, 100, 30);
+        button1000.setFont(buttonFont);
+        button1000.setForeground(buttonForeground);
+        button1000.setBackground(buttonBackground);
+        button1000.setBorderPainted(false);
         add(button1000);
 
         button10000 = new JButton("Sort 10000");
         button10000.setBounds(270, 30, 100, 30);
+        button10000.setFont(buttonFont);
+        button10000.setForeground(buttonForeground);
+        button10000.setBackground(buttonBackground);
+        button10000.setBorderPainted(false);
         add(button10000);
 
         button100000 = new JButton("Sort 100000");
         button100000.setBounds(120, 80, 150, 30);
+        button100000.setFont(buttonFont);
+        button100000.setForeground(buttonForeground);
+        button100000.setBackground(buttonBackground);
+        button100000.setBorderPainted(false);
         add(button100000);
 
         originalArrayTextArea = new JTextArea();
@@ -56,7 +80,11 @@ public class SortingApp extends JFrame {
 
         JLabel algorithmLabel = new JLabel("Algoritmo de Ordenamiento:");
         algorithmLabel.setBounds(60, 10, 160, 20);
+        algorithmLabel.setFont(font);
+        algorithmLabel.setForeground(Color.black);
         add(algorithmLabel);
+        getContentPane().setBackground(Color.LIGHT_GRAY);
+
 
         algorithmComboBox = new JComboBox<>();
         algorithmComboBox.addItem("Bubble Sort");
@@ -65,6 +93,7 @@ public class SortingApp extends JFrame {
         algorithmComboBox.addItem("Count Sort");
         algorithmComboBox.addItem("Merge Sort");
         algorithmComboBox.addItem("Heap Sort"); // Agregado el algoritmo Heap Sort al menú desplegable
+        algorithmComboBox.addItem("Binary Search");
         algorithmComboBox.setBounds(230, 10, 150, 20);
         add(algorithmComboBox);
 
@@ -139,6 +168,7 @@ public class SortingApp extends JFrame {
             case "Count Sort" -> CountSort.sort(array);
             case "Merge Sort" -> MergeSort.sort(array);
             case "Heap Sort" -> HeapSort.sort(array); // Agregado el caso para el algoritmo Heap Sort
+
             default ->
                 // Default to Bubble Sort
                     BubbleSort.sort(array);
