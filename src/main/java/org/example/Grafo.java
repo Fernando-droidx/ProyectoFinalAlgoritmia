@@ -64,7 +64,7 @@ class Grafo {
         grafo.agregarArista(2, 3);
         grafo.agregarArista(3, 3);
         System.out.println("Grafo original:");       <------------------ esto va en el main
-        grafo.mostrarGrafo();                        <------------------- FErnando Ramirez Riuvas
+        grafo.mostrarGrafo();                        <------------------- 
         System.out.println("\nRecorrido BFS:");
         grafo.bfs(0);
 
