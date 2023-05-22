@@ -63,7 +63,6 @@ class Grafo {
         grafo.agregarArista(2, 0);
         grafo.agregarArista(2, 3);
         grafo.agregarArista(3, 3);
-
         System.out.println("Grafo original:");       <------------------ esto va en el main
         grafo.mostrarGrafo();
 
