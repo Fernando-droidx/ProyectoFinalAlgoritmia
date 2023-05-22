@@ -56,7 +56,7 @@ public class Arboles {
 /* Arboles arbol = new Arboles();
         arbol.insertar(5,null);
         arbol.insertar(7,null);    <----- esto va en el main
-        arbol.insertar(6,null);
+        arbol.insertar(6,null); <nsdajsndflas
         arbol.insertar(4,null);
         arbol.insertar(8,null);
         arbol.insertar(1,null);
