@@ -1,6 +1,9 @@
 package org.example;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.util.Objects;
 
@@ -24,11 +27,11 @@ public class SortingApp extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(440, 650);
         setLayout(null);
-        Font font = new Font("Arial", Font.BOLD, 12);
+        Font font = new Font("Montserrat", Font.BOLD, 12);
         Font buttonFont = new Font("Montserrat", Font.BOLD, 14);
 
-        Color buttonForeground = Color.WHITE;
-        Color buttonBackground = Color.decode("#6EC5FF");
+        Color buttonForeground = Color.black;
+        Color buttonBackground = Color.white;
 
 
 
@@ -53,7 +56,7 @@ public class SortingApp extends JFrame {
         button10000.setFont(buttonFont);
         button10000.setForeground(buttonForeground);
         button10000.setBackground(buttonBackground);
-        button10000.setBorderPainted(false);
+        button10000.setBorderPainted(true);
         add(button10000);
 
         button100000 = new JButton("Sort 100000");
@@ -67,11 +70,13 @@ public class SortingApp extends JFrame {
         originalArrayTextArea = new JTextArea();
         JScrollPane originalScrollPane = new JScrollPane(originalArrayTextArea);
         originalScrollPane.setBounds(50, 130, 320, 200);
+        originalScrollPane.setBorder(BorderFactory.createLineBorder(Color.decode("#E8E8E8")));
         add(originalScrollPane);
 
         sortedArrayTextArea = new JTextArea();
         JScrollPane sortedScrollPane = new JScrollPane(sortedArrayTextArea);
         sortedScrollPane.setBounds(50, 350, 320, 200);
+        sortedScrollPane.setBorder(BorderFactory.createLineBorder(Color.decode("#E8E8E8")));
         add(sortedScrollPane);
 
         labelTime = new JLabel("Tiempo de ejecucion: ");
@@ -79,11 +84,12 @@ public class SortingApp extends JFrame {
         add(labelTime);
 
         JLabel algorithmLabel = new JLabel("Algoritmo de Ordenamiento:");
-        algorithmLabel.setBounds(60, 10, 160, 20);
-        algorithmLabel.setFont(font);
+        algorithmLabel.setBounds(50, 10, 160, 20);
+        algorithmLabel.setBackground(buttonBackground);
         algorithmLabel.setForeground(Color.black);
+        getContentPane().setBackground(Color.decode("#E8E8E8"));
         add(algorithmLabel);
-        getContentPane().setBackground(Color.LIGHT_GRAY);
+
 
 
         algorithmComboBox = new JComboBox<>();
@@ -93,8 +99,15 @@ public class SortingApp extends JFrame {
         algorithmComboBox.addItem("Count Sort");
         algorithmComboBox.addItem("Merge Sort");
         algorithmComboBox.addItem("Heap Sort"); // Agregado el algoritmo Heap Sort al menú desplegable
-        algorithmComboBox.addItem("Binary Search");
+
         algorithmComboBox.setBounds(230, 10, 150, 20);
+        algorithmComboBox.setBackground(Color.WHITE); // Cambia el color de fondo
+        algorithmComboBox.setForeground(Color.BLACK); // Cambia el color de texto
+        Border lineBorder = BorderFactory.createLineBorder(Color.BLACK);
+        Border emptyBorder = new EmptyBorder(1, 1, 1, 1);
+        Border compoundBorder = new CompoundBorder(lineBorder, emptyBorder);
+        algorithmComboBox.setBorder(compoundBorder);
+
         add(algorithmComboBox);
 
         setResizable(false);
